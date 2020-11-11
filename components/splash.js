@@ -30,7 +30,7 @@ loadingTimeforSplash = async () => {
 }
 
  async componentDidMount() {
-   console.log("aqui")
+   console.log("aqui splash")
     
     const { navigation } = this.props;
 
