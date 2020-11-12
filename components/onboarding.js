@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity,Image } from 'react-native';
 import Swiper from "react-native-swiper";
 import { Button } from "react-native-elements"
 
@@ -29,14 +29,15 @@ export default class Onboarding extends React.Component {
                     }}
                 >
                     <View style={[styles.slideContainer]}>
-                        <Text style={[styles.blankText, styles.titleText]}>Achô</Text>
+                    <Image source={require('./../assets/images/logo_single.png')}></Image>
                         <Text style={[styles.blankText]}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </Text>
                     </View>
                     <View style={[styles.slideContainer]}>
-                        <Text style={[styles.blankText, styles.titleText]}>Achô</Text>
+                    <Image source={require('./../assets/images/logo_single.png')}></Image>
                         <Text style={[styles.blankText]}>A Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
                     </View>
                     <View style={[styles.slideContainer]}>
+                    <Image source={require('./../assets/images/logo_word.png')}></Image>
                         <View style={styles.buttons}>
                             <Button
                                 title="Cadastrar como Prestador"
