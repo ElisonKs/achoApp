@@ -5,6 +5,7 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 import Splash from './components/splash'
 import Onboarding from './components/onboarding'
+import Login from './components/login'
 
 
 
@@ -16,6 +17,11 @@ const AppNavigator = createStackNavigator({
     },
     Onboarding: {
         screen: Onboarding,
+        navigationOptions: {
+            headerShown: false        }
+    },
+    Login: {
+        screen: Login,
         navigationOptions: {
             headerShown: false        }
     },

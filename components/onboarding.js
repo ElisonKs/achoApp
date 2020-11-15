@@ -1,19 +1,21 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity,Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import Swiper from "react-native-swiper";
 import { Button } from "react-native-elements"
 
 
 export default class Onboarding extends React.Component {
 
-    state = {
-        week: 0, birthDateText: "", dateLabelHidden: true,
-        dateHidden: true, weekHidden: true
+    constructor(props)
+    {
+        super(props)
     }
+
+    
 
     render() {
 
-
+        const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
                 <Swiper style={styles.activeDot}
@@ -29,15 +31,15 @@ export default class Onboarding extends React.Component {
                     }}
                 >
                     <View style={[styles.slideContainer]}>
-                    <Image source={require('./../assets/images/logo_single.png')}></Image>
+                        <Image source={require('./../assets/images/logo_single.png')}></Image>
                         <Text style={[styles.blankText]}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </Text>
                     </View>
                     <View style={[styles.slideContainer]}>
-                    <Image source={require('./../assets/images/logo_single.png')}></Image>
+                        <Image source={require('./../assets/images/logo_single.png')}></Image>
                         <Text style={[styles.blankText]}>A Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
                     </View>
                     <View style={[styles.slideContainer]}>
-                    <Image source={require('./../assets/images/logo_word.png')}></Image>
+                        <Image source={require('./../assets/images/logo_word.png')}></Image>
                         <View style={styles.buttons}>
                             <Button
                                 title="Cadastrar como Prestador"
@@ -55,14 +57,18 @@ export default class Onboarding extends React.Component {
 
                         </View>
                         <View style={styles.buttons}>
-                            <Text style={styles.blankText}>
-                                <Text>
-                                    Já sou cadastrado.
+                            
+                                <Text style={styles.blankText}>
+                                    <Text>
+                                        Já sou cadastrado.
                                 </Text>
-                                <Text style={styles.pinkText}>
-                                     Fazer Login.
+                                <TouchableOpacity
+                            onPress={ ()=>navigate("Login")}>
+                                    <Text style={styles.pinkText}>
+                                        Fazer Login.
                                  </Text>
-                            </Text>
+                                 </TouchableOpacity>
+                                </Text>
                             <Text style={styles.blankText}>Cadastrar mais tarde.</Text>
                         </View>
 
@@ -92,8 +98,8 @@ const styles = StyleSheet.create({
         maxWidth: '75%',
         fontSize: 16
     },
-    pinkText:{
-     color: "#FAA98B"
+    pinkText: {
+        color: "#FAA98B"
     },
     titleText: {
         fontSize: 32,
