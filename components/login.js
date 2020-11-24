@@ -2,25 +2,35 @@ import React from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
 import { Button } from 'react-native-elements'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
+import gstyles from '../styles/global';
 
 export default class Login extends React.Component {
+
+    constructor(props)
+    {
+        super(props)
+    }
 
 
     render() {
 
+        const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
                 <Image source={require('./../assets/images/logo_word.png')}></Image>
-                <Text style={styles.label}>Email</Text>
-                <TextInput style={styles.input}></TextInput>
-                <Text style={styles.label}>Senha</Text>
-                <TextInput style={styles.input}></TextInput>
+                <Text style={gstyles.label}>Email</Text>
+                <TextInput style={gstyles.input}></TextInput>
+                <Text style={gstyles.label}>Senha</Text>
+                <TextInput style={gstyles.input}></TextInput>
                 <Button
                     title="Entrar"
-                    titleStyle={styles.buttonLabel}
-                    buttonStyle={styles.buttonStyle}
-                    containerStyle={styles.buttonContainerStyle} />
-                <Text style={styles.forgot}>Deu um branco! Esqueci a senha!</Text>
+                    titleStyle={gstyles.buttonLabel}
+                    buttonStyle={gstyles.buttonStyle}
+                    containerStyle={gstyles.buttonContainerStyle} />
+                <TouchableOpacity
+                onPress={()=>navigate("RecoverPassword")}>
+                   <Text style={styles.forgot}>Deu um branco! Esqueci a senha!</Text>
+                </TouchableOpacity>
                 <Button
                   title="Login com o Google"
                   icon={<Image style={styles.buttonIcon} source={require('./../assets/images/icon-google.png')}></Image>}
@@ -56,34 +66,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
-    label: {
-        color: "#FF5292",
-        fontSize: 14,
-        fontFamily: "Roboto",
-        textAlign: "left",
-        width: "100%",
-        marginTop: 15
-
-    },
-    input: {
-        borderBottomColor: "#330066",
-        borderBottomWidth: 1,
-        width: "100%"
-    },
-    buttonContainerStyle: {
-        width: "100%",
-        marginTop: 30
-    },
-    buttonStyle: {
-        backgroundColor: "#330066",
-        width: "100%",
-        borderRadius: 30,
-        height: 48
-    },
-    buttonLabel: {
-        color: "#FAA98B",
-        fontSize: 18
-    },
+   
     forgot: {
         color: "#FF5292",
         marginTop: 30,
