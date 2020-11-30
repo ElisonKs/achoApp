@@ -2,11 +2,12 @@ import React from 'react';
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from 'react-navigation-stack'
 
-
+import CustomHeader from './components/customHeader'
 import Splash from './components/splash'
 import Onboarding from './components/onboarding'
 import Login from './components/login'
 import RecoverPassword from './components/recoverPassword'
+import WorkerRegister1 from './components/workerRegister1'
 
 
 
@@ -30,6 +31,11 @@ const AppNavigator = createStackNavigator({
         screen: RecoverPassword,
         navigationOptions: {
             headerShown: false        }
+    },
+    WorkerRegister1: {
+        screen: WorkerRegister1,
+        navigationOptions: {
+            header: ()=> <CustomHeader title={"Cadastro de Prestador 1/6"} subtitle={"Dados Pessoais"} />      }
     },
  
 

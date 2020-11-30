@@ -42,6 +42,7 @@ export default class Onboarding extends React.Component {
                         <Image source={require('./../assets/images/logo_word.png')}></Image>
                         <View style={styles.buttons}>
                             <Button
+                                onPress={()=>navigate("WorkerRegister1")}
                                 title="Cadastrar como Prestador"
                                 buttonStyle={styles.buttonOnboarding}
                                 titleStyle={styles.buttonOnboardingText}
