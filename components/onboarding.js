@@ -6,16 +6,15 @@ import { Button } from "react-native-elements"
 
 export default class Onboarding extends React.Component {
 
-    constructor(props)
-    {
+    constructor(props) {
         super(props)
     }
 
-    
+
 
     render() {
 
-        const {navigate} = this.props.navigation;
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
                 <Swiper style={styles.activeDot}
@@ -42,7 +41,7 @@ export default class Onboarding extends React.Component {
                         <Image source={require('./../assets/images/logo_word.png')}></Image>
                         <View style={styles.buttons}>
                             <Button
-                                onPress={()=>navigate("WorkerRegister1")}
+                                onPress={() => navigate("WorkerRegister1")}
                                 title="Cadastrar como Prestador"
                                 buttonStyle={styles.buttonOnboarding}
                                 titleStyle={styles.buttonOnboardingText}
@@ -58,19 +57,22 @@ export default class Onboarding extends React.Component {
 
                         </View>
                         <View style={styles.buttons}>
-                            
-                                <Text style={styles.blankText}>
-                                    <Text>
-                                        Já sou cadastrado.
+
+                            <Text style={styles.blankText}>
+                                <Text>
+                                    Já sou cadastrado.
                                 </Text>
                                 <TouchableOpacity
-                            onPress={ ()=>navigate("Login")}>
+                                    onPress={() => navigate("Login")}>
                                     <Text style={styles.pinkText}>
                                         Fazer Login.
                                  </Text>
-                                 </TouchableOpacity>
-                                </Text>
-                            <Text style={styles.blankText}>Cadastrar mais tarde.</Text>
+                                </TouchableOpacity>
+                            </Text>
+                            <TouchableOpacity
+                            onPress={() => navigate("Home")}>
+                                <Text style={styles.blankText}>Cadastrar mais tarde.</Text>
+                            </TouchableOpacity>
                         </View>
 
 

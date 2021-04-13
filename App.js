@@ -8,6 +8,7 @@ import Onboarding from './components/onboarding'
 import Login from './components/login'
 import RecoverPassword from './components/recoverPassword'
 import WorkerRegister1 from './components/workerRegister1'
+import Home from './components/home'
 
 
 
@@ -36,6 +37,9 @@ const AppNavigator = createStackNavigator({
         screen: WorkerRegister1,
         navigationOptions: {
             header: ()=> <CustomHeader title={"Cadastro de Prestador 1/6"} subtitle={"Dados Pessoais"} />      }
+    },
+    Home: {
+        screen: Home,
     },
  
 
