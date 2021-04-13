@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, StyleSheet } from 'react-native'
 import CategoriasHome from './categoriasHome'
 
 export default class Home extends React.Component {
@@ -7,11 +7,16 @@ export default class Home extends React.Component {
     render() {
 
         return (
-            <View>
-                <Text>Aqui fica a home</Text>
+            <View style={styles.container}>
 
                 <CategoriasHome></CategoriasHome>
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container:{
+        margin:15
+    }
+})

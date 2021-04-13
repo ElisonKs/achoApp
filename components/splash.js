@@ -20,7 +20,6 @@ data;
 
 
 loadingTimeforSplash = async () => {
-    console.log("nesse")
     return new Promise((resolve) =>
         setTimeout(
             () => { resolve('result') },
@@ -34,7 +33,6 @@ loadingTimeforSplash = async () => {
     
     const { navigation } = this.props;
 
-        console.log("epa")
        this.data = await this.loadingTimeforSplash();
         const week = await AsyncStorage.getItem('currentWeek');
         const birthDate = await AsyncStorage.getItem('birthDate');

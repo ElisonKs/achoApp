@@ -1,31 +1,94 @@
 import React from 'react'
-import {View,Text,Image,FlatList} from 'react-native'
+import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
 
-export default class CategoriasHome extends React.Component{
+export default class CategoriasHome extends React.Component {
 
-    constructor(props)
-    {
+    constructor(props) {
         super(props)
-        this.state = {categoryList : null}
+        this.state = { categoriesList: null }
     }
 
-    render(){
+    render() {
 
-        return(
+        return (
             <View>
-                <Text>Aqui ficam as categorias</Text>
+                <Text style={styles.title}>Categorias</Text>
                 <FlatList
-                ref={
-                    (c) => {
-                      this.flatList = c;
-                    }}
                     horizontal
                     showsHorizontalScrollIndicator={false}
-                    data={this.categoryList}
-                >
+                    data={this.state.categoriesList}
 
-                </FlatList>
+                    renderItem={({ item }) => {
+                        return (
+                            <TouchableOpacity
+                                onPress={() => console.log("aqui")}
+
+                            >
+                                <View style={styles.categoryItem}>
+                                    <View style={styles.categorieCircle}>
+
+                                    </View>
+                                    <View style={styles.titleContainer}>
+                                        <Text sytle={styles.categoryTitle}>
+                                            {item.acho_descricao_cat}
+                                        </Text>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                        );
+                    }}
+                    keyExtractor={(item, index) => index.toString()}
+                />
             </View>
         )
     }
+
+    async componentDidMount() {
+        return fetch('http://www.achoapp.com.br/administrador/json/categoria_json/retornar_categorias_principais/08787a804e2a4f7ba145a553e4eab7cb',
+            {
+                headers: new Headers({
+                    dismiss: ""
+                })
+            })
+            .then((response) => response.json())
+            .then((responseJson) => {
+
+                this.setState({
+                    categoriesList: responseJson.categorias,
+                    isLoading: false
+                })
+
+
+
+            })
+            .catch((error) => {
+                console.log(error);
+            }
+            )
+
+    }
 }
+
+const styles = StyleSheet.create({
+    title: {
+        color: "#FF5292",
+        fontSize: 18,
+        marginBottom:5
+
+    },
+    categorieCircle: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        borderColor: "#330066",
+        borderWidth: 1
+    },
+    categoryItem: {
+    },
+    titleContainer:{
+    width:100
+    },
+    categoryTitle: {
+        maxWidth:5
+    }
+})
