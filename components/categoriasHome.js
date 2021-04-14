@@ -26,7 +26,7 @@ export default class CategoriasHome extends React.Component {
                             >
                                 <View style={styles.categoryItem}>
                                     <View style={styles.categorieCircle}>
-
+                                    <Image style={styles.imgCategory} source={require('./../assets/images/logo_single.png')}></Image>
                                     </View>
                                     <View style={styles.titleContainer}>
                                         <Text sytle={styles.categoryTitle}>
@@ -81,7 +81,9 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 25,
         borderColor: "#330066",
-        borderWidth: 1
+        borderWidth: 1,
+        alignItems:"center",
+        paddingTop:7
     },
     categoryItem: {
     },
@@ -90,5 +92,9 @@ const styles = StyleSheet.create({
     },
     categoryTitle: {
         maxWidth:5
+    },
+    imgCategory:{
+        width:30,
+        height:30
     }
 })

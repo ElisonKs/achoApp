@@ -20,7 +20,7 @@ export default class CustomHeader extends React.Component{
 
 const styles= StyleSheet.create({
     container:{
-        paddingTop:40,
+        paddingTop:50,
         alignItems:'center',
         borderBottomColor:"#ffffff",
         borderBottomWidth:1

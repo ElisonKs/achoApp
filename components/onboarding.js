@@ -31,11 +31,27 @@ export default class Onboarding extends React.Component {
                 >
                     <View style={[styles.slideContainer]}>
                         <Image source={require('./../assets/images/logo_single.png')}></Image>
-                        <Text style={[styles.blankText]}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </Text>
+                        <Text style={[styles.blankText]}>
+                            Bem vindo!
+                        </Text>
+                        <Text style={[styles.blankText]}>
+                            Aqui você encontra o serviço que está procurando!
+                            </Text>
+                        <Text style={[styles.blankText]}>
+                            Prático e Simples!
+                        </Text>
                     </View>
                     <View style={[styles.slideContainer]}>
                         <Image source={require('./../assets/images/logo_single.png')}></Image>
-                        <Text style={[styles.blankText]}>A Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+                        <Text style={[styles.blankText]}>
+                        Prestador de serviço procurando clientes?
+                        </Text>
+                        <Text style={[styles.blankText]}>
+                        Deixe que eles te encontrem.
+                        </Text>
+                        <Text style={[styles.blankText]}>
+                        Cadastre-se e anuncie o seu serviço!
+                        </Text>
                     </View>
                     <View style={[styles.slideContainer]}>
                         <Image source={require('./../assets/images/logo_word.png')}></Image>
@@ -70,7 +86,7 @@ export default class Onboarding extends React.Component {
                                 </TouchableOpacity>
                             </Text>
                             <TouchableOpacity
-                            onPress={() => navigate("Home")}>
+                                onPress={() => navigate("Home")}>
                                 <Text style={styles.blankText}>Cadastrar mais tarde.</Text>
                             </TouchableOpacity>
                         </View>
@@ -79,7 +95,7 @@ export default class Onboarding extends React.Component {
                     </View>
 
                 </Swiper>
-            </View>
+            </View >
         )
     }
 }
