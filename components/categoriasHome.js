@@ -26,7 +26,10 @@ export default class CategoriasHome extends React.Component {
                             >
                                 <View style={styles.categoryItem}>
                                     <View style={styles.categorieCircle}>
-                                    <Image style={styles.imgCategory} source={require('./../assets/images/logo_single.png')}></Image>
+                                    <Image style={styles.imgCategory}
+                                    source={{ uri: item.acho_imagem_cat }} 
+                                    defaultSource={require('./../assets/images/logo_single.png')}
+                                   ></Image>
                                     </View>
                                     <View style={styles.titleContainer}>
                                         <Text sytle={styles.categoryTitle}>
