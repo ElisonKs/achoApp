@@ -13,7 +13,7 @@ export default class WorkerRegister1 extends React.Component {
 
     render() {
 
-
+        const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
                 <Text style={gstyles.label}>Nome</Text>
@@ -64,7 +64,8 @@ export default class WorkerRegister1 extends React.Component {
                     title="Continuar"
                     titleStyle={gstyles.buttonLabel}
                     buttonStyle={gstyles.buttonStyle}
-                    containerStyle={gstyles.buttonContainerStyle} />
+                    containerStyle={gstyles.buttonContainerStyle}
+                    onPress={()=>navigate("WorkerRegister2")} />
             </View>
         )
     }
