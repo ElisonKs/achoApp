@@ -23,13 +23,18 @@ export default class WorkerRegister2 extends React.Component {
                     <Text style={styles.labelNoService}>Você ainda não possui um serviço cadastrado.</Text>
                 </View>
               
-           
+                <Button
+                    title="Cadastrar Serviço"
+                    titleStyle={gstyles.buttonLabel}
+                    buttonStyle={gstyles.buttonStyle}
+                    containerStyle={gstyles.buttonContainerStyle}
+                    onPress={()=>navigate("workerRegister3")} />
                
               
                 <Button
                     title="Continuar"
-                    titleStyle={gstyles.buttonLabel}
-                    buttonStyle={gstyles.buttonStyle}
+                    titleStyle={gstyles.buttonDisabledLabel}
+                    buttonStyle={gstyles.buttonDisabledStyle}
                     containerStyle={gstyles.buttonContainerStyle}
                     onPress={()=>navigate("workerRegister3")} />
             </View>
@@ -42,6 +47,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         paddingTop: 20,
         paddingHorizontal: 15
+        
     },
     inlineInputs: {
         flexDirection: "row",

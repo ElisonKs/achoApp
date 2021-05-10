@@ -29,4 +29,14 @@ export default StyleSheet.create({
         borderBottomWidth: 1,
         width: "100%"
     },
+    buttonDisabledStyle: {
+        backgroundColor: "#C4C4C4",
+        width: "100%",
+        borderRadius: 30,
+        height: 48
+    },
+    buttonDisabledLabel: {
+        color: "#FFFFFF",
+        fontSize: 18
+    },
 });
